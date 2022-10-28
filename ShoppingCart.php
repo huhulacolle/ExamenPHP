@@ -2,7 +2,7 @@
 
 class ShoppingCart {
 
-  private $panier;
+  private $panier = array();
   private static $idInstanciation = 0;
   private $id;
 
@@ -13,10 +13,15 @@ class ShoppingCart {
   }
   
   public function additem(Item $item) {
-    if ($item->getWeight() > 10000) {
+    $TotalWeight = 0;
+    foreach($this->panier as $p){
+      $TotalWeight += $p->getWeight();
+    }
+    if(($TotalWeight + $item->getWeight() < 10000))
+        $this->panier[$item->getName()] = $item;
+    else{
       throw new Exception("l'article ". $item ->getName() ." dépasse les 10kg");
     }
-    return $this->panier[$item->getName()] = $item;
   }
 
   public function removeItem(Item $item) {
