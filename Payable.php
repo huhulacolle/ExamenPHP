@@ -20,6 +20,6 @@ class Payable {
 
   public function taxRatePerTenThousand() {
     return $this->object->getTax() / 100;
-  }  
+  }
 
 }
