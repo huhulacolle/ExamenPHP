@@ -15,4 +15,8 @@ class Payable extends Ticket {
     return $this->getPrice();
   }
 
+  public function taxRatePerTenThousand() {
+    return $this->getTax() / 100;
+  }  
+
 }
