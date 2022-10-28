@@ -5,6 +5,7 @@ class Item {
   private $Name;
   private $Price;
   private $Weight;
+  private $Tax = 1000;
 
   public function __construct($Name, $Price, $Weight)
   {
@@ -23,6 +24,10 @@ class Item {
 
   public function getWeight() {
     return $this->Weight;
+  }
+
+  public function getTax() {
+    return $this->Tax;
   }
 }
 

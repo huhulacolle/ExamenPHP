@@ -3,6 +3,7 @@
 class Ticket {
   private $Reference;
   private $Price;
+  private $Tax = 2500;
 
   public function __construct($Reference, $Price)
   {
@@ -16,5 +17,9 @@ class Ticket {
 
   public function getPrice() {
     return $this->Price;
+  }
+
+  public function getTax() {
+    return $this->Tax;
   }
 }

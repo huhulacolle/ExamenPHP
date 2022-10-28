@@ -2,6 +2,12 @@
 
 require_once("autoload.php");
 
-$test = new Payable("RGBY17032012 - Walles-France", 9000);
+$ticket = new Ticket("RGBY17032012 - Walles-France", 9000);
 
-echo $test->label();
+$payable = new Payable($ticket);
+
+echo $payable->label();
+echo "\n";
+echo $payable->cost();
+echo "\n";
+echo $payable->taxRatePerTenThousand();
