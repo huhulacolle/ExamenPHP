@@ -22,3 +22,5 @@ $test->additem($item2);
 
 
 echo $test->toString();
+
+var_dump($test);
