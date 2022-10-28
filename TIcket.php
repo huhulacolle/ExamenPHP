@@ -3,7 +3,7 @@
 class Ticket {
   private $Reference;
   private $Price;
-  private $Tax = 25;
+  private $Tax = 2500;
 
   public function __construct($Reference, $Price)
   {

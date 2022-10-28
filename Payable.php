@@ -1,22 +1,25 @@
 <?php
 
-class Payable extends Ticket {
-  
-  public function __construct($Reference, $Price)
+class Payable {
+
+  private $object;
+
+  public function __construct($object)
   {
-    parent::__construct($Reference, $Price);
+    $this->object = $object;
   }
 
+  
   public function label() {
-    return $this->getReference();
+    return get_class($this->object);
   }
 
   public function cost() {
-    return $this->getPrice();
+    return $this->object->getPrice();
   }
 
   public function taxRatePerTenThousand() {
-    return $this->getTax() / 100;
+    return $this->object->getTax() / 100;
   }  
 
 }
